@@ -1699,3 +1699,97 @@ java.io.EOFException: null
 2024-11-19T13:24:07.448+01:00 DEBUG 29828 --- [debates] [http-nio-9000-exec-4] s.w.s.h.LoggingWebSocketHandlerDecorator : New StandardWebSocketSession[id=061bdb33-7089-485d-b325-abce742095c1, uri=ws://10.0.2.2:9000/gifts]
 2024-11-19T13:24:07.453+01:00 DEBUG 29828 --- [debates] [clientInboundChannel-51] org.springframework.web.SimpLogging      : Processing CONNECT session=061bdb33-7089-485d-b325-abce742095c1
 2024-11-19T13:24:07.455+01:00 DEBUG 29828 --- [debates] [clientInboundChannel-32] org.springframework.web.SimpLogging      : Processing SUBSCRIBE /topic/debate id=sub-0 session=061bdb33-7089-485d-b325-abce742095c1
+2024-11-19T13:48:53.091+01:00  INFO 23624 --- [debates] [main] com.example.debates.DebatesApplication   : Starting DebatesApplication using Java 17.0.7 with PID 23624 (C:\Users\mgaan\OneDrive\Documentos\misProyectos\Debate\debates\target\classes started by mgaan in C:\Users\mgaan\OneDrive\Documentos\misProyectos\Debate\debates)
+2024-11-19T13:48:53.096+01:00  INFO 23624 --- [debates] [main] com.example.debates.DebatesApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T13:48:54.609+01:00  INFO 23624 --- [debates] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T13:48:54.825+01:00  INFO 23624 --- [debates] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 203 ms. Found 12 JPA repository interfaces.
+2024-11-19T13:48:56.360+01:00  INFO 23624 --- [debates] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2024-11-19T13:48:56.388+01:00  INFO 23624 --- [debates] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T13:48:56.389+01:00  INFO 23624 --- [debates] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T13:48:56.553+01:00  INFO 23624 --- [debates] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T13:48:56.554+01:00  INFO 23624 --- [debates] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3391 ms
+2024-11-19T13:48:56.614+01:00  INFO 23624 --- [debates] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T13:48:57.212+01:00  INFO 23624 --- [debates] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:~/testdb99 user=SA
+2024-11-19T13:48:57.215+01:00  INFO 23624 --- [debates] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T13:48:57.230+01:00  INFO 23624 --- [debates] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/testdb99'
+2024-11-19T13:48:57.431+01:00  INFO 23624 --- [debates] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T13:48:57.575+01:00  INFO 23624 --- [debates] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T13:48:57.648+01:00  INFO 23624 --- [debates] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T13:48:58.231+01:00  INFO 23624 --- [debates] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T13:48:58.346+01:00  WARN 23624 --- [debates] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-19T13:49:00.940+01:00  INFO 23624 --- [debates] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T13:49:01.136+01:00  INFO 23624 --- [debates] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T13:49:01.806+01:00  INFO 23624 --- [debates] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T13:49:03.141+01:00  WARN 23624 --- [debates] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-19T13:49:03.419+01:00 DEBUG 23624 --- [debates] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T13:49:03.993+01:00  INFO 23624 --- [debates] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-19T13:49:03.994+01:00  WARN 23624 --- [debates] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-19T13:49:04.497+01:00 DEBUG 23624 --- [debates] [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/gifts, /gifts/**] in 'stompWebSocketHandlerMapping'
+2024-11-19T13:49:04.622+01:00 DEBUG 23624 --- [debates] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2024-11-19T13:49:04.676+01:00 DEBUG 23624 --- [debates] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-19T13:49:04.787+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.788+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/ws/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.788+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/app/repost']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.788+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/gifts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.788+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/like/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/debate/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/unirse/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/chatear/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/notificacionRepost/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/auth/register/admin']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/auth/register/user']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/auth/login/admin']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/auth/login/user']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.789+01:00  WARN 23624 --- [debates] [main] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/auth/firebase/login']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-11-19T13:49:04.885+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.A.C.ParaTiController:
+	
+2024-11-19T13:49:04.886+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.C.c.ChatController:
+	
+2024-11-19T13:49:04.887+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.C.c.ComentarioController:
+	
+2024-11-19T13:49:04.887+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.D.c.DebateController:
+	
+2024-11-19T13:49:04.888+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.F.c.FavoritoController:
+	
+2024-11-19T13:49:04.888+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.F.FirebaseController:
+	
+2024-11-19T13:49:04.888+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.G.c.GuardadoController:
+	
+2024-11-19T13:49:04.888+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.N.c.NotificacionController:
+	
+2024-11-19T13:49:04.895+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.R.c.RepostController:
+	{[MESSAGE],[/gifts]}: repostear(UUID)
+2024-11-19T13:49:04.896+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.S.c.SeguirController:
+	
+2024-11-19T13:49:04.896+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.u.c.AdministradorController:
+	
+2024-11-19T13:49:04.896+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	c.e.d.u.c.UsuarioController:
+	
+2024-11-19T13:49:04.897+01:00 DEBUG 23624 --- [debates] [main] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2024-11-19T13:49:04.984+01:00 DEBUG 23624 --- [debates] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T13:49:05.392+01:00  INFO 23624 --- [debates] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9000 (http) with context path '/'
+2024-11-19T13:49:05.395+01:00 DEBUG 23624 --- [debates] [main] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2024-11-19T13:49:05.396+01:00 DEBUG 23624 --- [debates] [main] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2024-11-19T13:49:05.396+01:00  INFO 23624 --- [debates] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2024-11-19T13:49:05.398+01:00 DEBUG 23624 --- [debates] [main] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a57bb34]
+2024-11-19T13:49:05.398+01:00 DEBUG 23624 --- [debates] [main] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a57bb34]
+2024-11-19T13:49:05.399+01:00  INFO 23624 --- [debates] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1a57bb34]]
+2024-11-19T13:49:05.400+01:00  INFO 23624 --- [debates] [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2024-11-19T13:49:05.403+01:00 DEBUG 23624 --- [debates] [main] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2024-11-19T13:49:05.403+01:00 DEBUG 23624 --- [debates] [main] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2024-11-19T13:49:05.416+01:00  INFO 23624 --- [debates] [main] com.example.debates.DebatesApplication   : Started DebatesApplication in 12.98 seconds (process running for 13.739)
+2024-11-19T13:50:05.338+01:00  INFO 23624 --- [debates] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
