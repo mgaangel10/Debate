@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "75947768269",
+    "project_id": "debates-a768a",
+    "storage_bucket": "debates-a768a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75947768269:android:5cd0797334b1292e706c84",
+        "android_client_info": {
+          "package_name": "com.debates.miapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcMznwVpS1Q7DTqgFHJDGODGLz_6RI1Ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
