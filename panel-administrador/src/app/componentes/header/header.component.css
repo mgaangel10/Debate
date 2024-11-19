@@ -1,0 +1,24 @@
+.navbar-nav {
+    flex: 1;
+    justify-content: center;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #393f44;
+    color: white;
+    border-radius: 5px;
+}
+.nav-link:hover {
+    background-color: #fafafa;
+    color: black;
+    border-color: black;
+    border: 0.5px solid black;
+
+}

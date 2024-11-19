@@ -230,7 +230,7 @@ class _PerfilPageState extends State<PerfilPage> {
           value: '5',
           child: Row(
             children: [
-              Icon(Icons.favorite, color: Color.fromARGB(255, 252, 17, 0)),
+              Icon(Icons.logout, color: Color.fromARGB(255, 252, 17, 0)),
               SizedBox(width: 10),
               Text('Cerra Sesion'),
             ],

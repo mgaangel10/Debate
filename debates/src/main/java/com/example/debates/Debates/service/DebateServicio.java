@@ -10,7 +10,9 @@ import com.example.debates.Seguidores.model.Seguir;
 import com.example.debates.Seguidores.repositorio.SeguirRepo;
 import com.example.debates.users.Dto.GetUsuario;
 import com.example.debates.users.Dto.VerPerfilUsuarioDto;
+import com.example.debates.users.model.Administrador;
 import com.example.debates.users.model.Usuario;
+import com.example.debates.users.repositorio.AdministradorRepo;
 import com.example.debates.users.repositorio.UsuarioRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,6 +38,7 @@ public class DebateServicio {
     private final UsuarioRepo usuarioRepo;
     private final UnirseRepo unirseRepo;
     private final SeguirRepo seguirRepo;
+    private final AdministradorRepo administradorRepo;
     private final TimeFormatterService timeFormatterService;
 
     public CrearDebateDto crearDebate(CrearDebateDto crearDebateDto){
@@ -182,6 +185,21 @@ public class DebateServicio {
                 List<MostrarDebatesDto> mostrarDebatesDtos = debates.stream().map(MostrarDebatesDto::of).collect(Collectors.toList());
                 return mostrarDebatesDtos;
             }
+        }
+        return null;
+    }
+
+    public List<MostrarDebatesDto> debatesTreding(){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            String nombre= ((UserDetails)principal).getUsername();
+            Optional<Administrador> administrador= administradorRepo.findByEmailIgnoreCase(nombre);
+
+           if (administrador.isPresent()){
+            List<MostrarDebatesDto> mostrarDebatesDtos = debateRepo.verDebatesTrendig();
+
+           }
         }
         return null;
     }
