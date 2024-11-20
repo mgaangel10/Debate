@@ -28,7 +28,7 @@ public interface UsuarioRepo extends JpaRepository<Usuario, UUID> {
 
     Optional<Usuario> findByFirebaseuid(String firebaseUid);  // Buscar por el UID de Firebase
 
-
+    @Query("SELECT u FROM Usuario u ORDER BY SIZE(u.seguidores) DESC") List<Usuario> findTop5ByFollowers();
     @Query("""
             select new com.example.debates.users.Dto.GetUsuario(
             u.id,

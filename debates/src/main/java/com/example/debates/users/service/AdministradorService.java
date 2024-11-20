@@ -1,7 +1,9 @@
 package com.example.debates.users.service;
 
 
+import com.example.debates.users.Dto.GetUsuario;
 import com.example.debates.users.Dto.PostCrearUserDto;
+import com.example.debates.users.Dto.VerPerfilUsuarioDto;
 import com.example.debates.users.model.Administrador;
 import com.example.debates.users.model.UserRoles;
 import com.example.debates.users.model.Usuario;
@@ -9,15 +11,15 @@ import com.example.debates.users.repositorio.AdministradorRepo;
 import com.example.debates.users.repositorio.UsuarioRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -75,5 +77,22 @@ public class AdministradorService {
         return usuarioRepo.findByEnabledTrue();
     }
 
+
+    public List<GetUsuario> usuariosConMasSeguidores(){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            String nombre= ((UserDetails)principal).getUsername();
+            Optional<Administrador> administrador = administradorRepo.findByEmailIgnoreCase(nombre);
+            if (administrador.isPresent()){
+                List<Usuario> usuarios1 = usuarioRepo.findTop5ByFollowers();
+                List<GetUsuario> getUsuarios = usuarios1.stream().map(GetUsuario::of).collect(Collectors.toList());
+                return getUsuarios;
+            }
+
+        }
+
+        return null;
+    }
 
 }

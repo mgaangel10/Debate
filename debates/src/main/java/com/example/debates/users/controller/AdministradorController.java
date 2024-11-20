@@ -2,10 +2,7 @@ package com.example.debates.users.controller;
 
 
 import com.example.debates.security.jwt.JwtProvider;
-import com.example.debates.users.Dto.JwtUserResponse;
-import com.example.debates.users.Dto.PostCrearUserDto;
-import com.example.debates.users.Dto.PostLogin;
-import com.example.debates.users.Dto.PostRegistroDto;
+import com.example.debates.users.Dto.*;
 import com.example.debates.users.model.Administrador;
 import com.example.debates.users.model.Usuario;
 import com.example.debates.users.service.AdministradorService;
@@ -72,6 +69,12 @@ public class AdministradorController {
     public ResponseEntity<List<Usuario>> listarUsuario(){
         List<Usuario> usuarios = administradorService.listadoUsuarios();
         return ResponseEntity.ok(usuarios);
+    }
+
+    @GetMapping("administrador/users/trending")
+    public ResponseEntity<List<GetUsuario>> usuariosTrending(){
+        List<GetUsuario> getUsuarios = administradorService.usuariosConMasSeguidores();
+        return ResponseEntity.ok(getUsuarios);
     }
 
 

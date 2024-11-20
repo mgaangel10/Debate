@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { LoginResponse } from '../models/login-administrador';
 import { Observable } from 'rxjs/internal/Observable';
 import { DebatesTrending } from '../models/debates-trending';
+import { UsuariosTrending } from '../models/usuarios-trending';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,16 @@ export class AdminServiceService {
         'Authorization': `Bearer ${token}`
       }
     })
+  }
+
+  usuariosConMasSeguidores():Observable<UsuariosTrending[]>{
+    let token = localStorage.getItem('TOKEN');
+    return this.http.get<UsuariosTrending[]>(`${this.url}/administrador/users/trending`,{
+      headers: {
+        accept: 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
+
   }
 }

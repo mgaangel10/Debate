@@ -7,6 +7,7 @@
         </div>
         
         <h3 class="text-center mt-2">Debates en tendencia</h3>
+
         <div class="d-flex ms-5  mt-2 w-100 h-50">
             <mat-card class="example-card me-2" *ngFor="let d of debatesTrending" appearance="outlined">
               <mat-card-header class="w-100">
@@ -30,6 +31,46 @@
               </mat-card-actions>
             </mat-card>
           </div>
+
+          <h3 class="text-center mt-2">Usuarios en tendencia</h3>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table w-100">
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef>Foto</th>
+              <td mat-cell *matCellDef="let element"><img [src]="element.fotoUrl"  alt="" style="width: 50px;"></td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="Nombre">
+              <th mat-header-cell *matHeaderCellDef>Nombre</th>
+              <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="usuario">
+              <th mat-header-cell *matHeaderCellDef>Usuario</th>
+              <td mat-cell *matCellDef="let element">{{element.username}}</td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="seguidores">
+              <th mat-header-cell *matHeaderCellDef>Seguidores</th>
+              <td mat-cell *matCellDef="let element">{{element.phoneNumber}}</td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+          
+          
+        
+          
+        
+          
+         
+          
     </div>
     
   </div>
