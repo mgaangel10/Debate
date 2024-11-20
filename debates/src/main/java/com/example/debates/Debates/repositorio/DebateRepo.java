@@ -17,25 +17,7 @@ public interface DebateRepo extends JpaRepository<Debate, UUID> {
 
     List<Debate> findByCreadorDelDebate(Usuario usuario);
 
-    @Query("""
-    select new com.example.debates.Debates.Dto.MostrarDebatesDto(
-        d.id,
-        d.titulo,
-        d.imagen,
-        d.descripcion,
-        d.numeroPersonasUnidas,
-        d.ultimoMensaje,
-        d.nombreCreador,
-        d.foto,
-        d.idCreador,
-        d.fechaCreacion
-    ) 
-    from Debate d
-    where d.numeroPersonasUnidas = (
-        select max(d2.numeroPersonasUnidas) from Debate d2
-    )
-""")
-    List<MostrarDebatesDto> verDebatesTrendig();
+
 
 
 }

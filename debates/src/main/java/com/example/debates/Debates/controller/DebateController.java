@@ -59,5 +59,13 @@ public class DebateController {
     public ResponseEntity<List<MostrarDebatesDto>> verDebatesUnidos(){
         List<MostrarDebatesDto> mostrarDebatesDtos = debateServicio.verLosDebatesQueEstaUnido();
         return ResponseEntity.ok(mostrarDebatesDtos);
+
+    }
+
+
+    @GetMapping("administrador/debates/trending")
+    public ResponseEntity<List<MostrarDebatesDto>> debatesTrending(){
+        List<MostrarDebatesDto> mostrarDebatesDtos = debateServicio.debatesTreding();
+        return ResponseEntity.ok(mostrarDebatesDtos);
     }
 }

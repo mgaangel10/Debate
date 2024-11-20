@@ -22,10 +22,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -197,7 +194,13 @@ public class DebateServicio {
             Optional<Administrador> administrador= administradorRepo.findByEmailIgnoreCase(nombre);
 
            if (administrador.isPresent()){
-            List<MostrarDebatesDto> mostrarDebatesDtos = debateRepo.verDebatesTrendig();
+           List<MostrarDebatesDto> mostrarDebatesDtos = debateRepo.findAll().stream().map(MostrarDebatesDto::of).collect(Collectors.toList());
+               List<MostrarDebatesDto> resultado = mostrarDebatesDtos.stream()
+                       .filter(mostrarDebatesDto -> mostrarDebatesDto.numeroPersonasUnidas() > 0)
+                       .sorted(Comparator.comparingInt(MostrarDebatesDto::numeroPersonasUnidas).reversed())
+                       .limit(5)
+                       .collect(Collectors.toList());
+               return resultado;
 
            }
         }

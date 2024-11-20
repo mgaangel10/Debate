@@ -17,7 +17,8 @@ public record MostrarDebatesDto (UUID id,
                                  String nombreCreador,
                                  String foto,
                                  UUID idCreador,
-                                 LocalDateTime fechaCreacion
+                                 LocalDateTime fechaCreacion,
+                                 String categorias
                                  ){
 
     public static MostrarDebatesDto of (Debate d){
@@ -30,7 +31,8 @@ public record MostrarDebatesDto (UUID id,
                 d.getCreadorDelDebate().getUsername(),
                 d.getCreadorDelDebate().getFotoUrl(),
                 d.getCreadorDelDebate().getId(),
-                d.getFechaCreacion()
+                d.getFechaCreacion(),
+                d.getCategorias()
         );
     }
 

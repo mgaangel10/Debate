@@ -1,1 +1,36 @@
-<app-header></app-header>
+<div class="d-flex ">
+    <app-header></app-header>
+    <div class="w-100">
+        <div class="d-flex  ">
+            <input class="form-control form-control w-25 mx-auto " type="text" placeholder="Buscar..." aria-label=".form-control-lg example" >
+          
+        </div>
+        
+        <h3 class="text-center mt-2">Debates en tendencia</h3>
+        <div class="d-flex ms-5  mt-2 w-100 h-50">
+            <mat-card class="example-card me-2" *ngFor="let d of debatesTrending" appearance="outlined">
+              <mat-card-header class="w-100">
+                <div mat-card-avatar >
+                  <img [src]="d.foto" class="w-100" alt="" style="background-size: cover;">
+                  
+                </div>
+                <mat-card-title class="text-center w-100">{{ d.titulo }}</mat-card-title>
+                
+                <mat-card-subtitle>{{ d.nombreCreador }}</mat-card-subtitle>
+                <mat-card-subtitle class="text-end "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                </svg>{{ d.numeroPersonasUnidas }}</mat-card-subtitle>
+                
+              </mat-card-header>
+              <img mat-card-image [src]="d.imagen" alt="Photo of {{ d.titulo }}">
+              <mat-card-actions class="mx-auto">
+                <button mat-button *ngFor="let categoria of separarCategorias(d.categorias)" [style.backgroundColor]="getRandomColor()">
+                  #{{ categoria }}
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+    </div>
+    
+  </div>
+  
